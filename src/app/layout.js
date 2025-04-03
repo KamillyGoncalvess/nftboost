@@ -1,28 +1,30 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 export const metadata = {
-  title: "NFTBoost",
-  description: "Projeto criado para o Codeboost",
+  title: "NFTBoost | Explore um Universo Digital de Colecionáveis Únicos!",
+  description: "Projeto criado para o curso Codeboost",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="pt-BR">
+      <link rel="icon" href="/icon-boost.svg" sizes="any" />
+      <body className={`${inter.variable} ${poppins.variable}`}>{children}
       </body>
     </html>
   );
